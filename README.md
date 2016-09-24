@@ -1,5 +1,7 @@
 # PdObjects
 
+[![Travis](https://img.shields.io/travis/eliottparis/PdObjects.svg?label=travis)](https://travis-ci.org/eliottparis/PdObjects) [![Appveyor](https://img.shields.io/appveyor/ci/eliottparis/PdObjects.svg?label=appveyor)](https://ci.appveyor.com/project/eliottparis/PdObjects/history)
+
 This repository contains external objects for [Pure Data](https://puredata.info/) written in C/C++.
 
 ## Prerequisites and dependencies

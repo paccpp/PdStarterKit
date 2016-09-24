@@ -22,7 +22,7 @@ static void *dummy_new(t_symbol *s, int argc, t_atom *argv)
         signalinlet_new((t_object *)x, 0);
         outlet_new((t_object *)x, &s_signal);
     }
-    
+
     return (x);
 }
 
@@ -38,12 +38,13 @@ t_int *dummy_perform(t_int *w)
     t_sample  *in2 = (t_sample *)(w[3]);
     t_sample  *out1 = (t_sample *)(w[4]);
     int n = (int)(w[5]);
-    
-    for(int i = 0; i < n; ++i)
+
+    int i;
+    for(i = 0; i < n; ++i)
     {
         *out1++ = *in1++ + *in2++;
     }
-    
+
     return (w+6);
 }
 

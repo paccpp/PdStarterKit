@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_SUPPRESS_REGENERATION true)
 set(CMAKE_MACOSX_RPATH Off)
@@ -11,4 +11,13 @@ project(PdObjects)
 set_pd_sources(${PROJECT_SOURCE_DIR}/pd/src/)
 set_pd_external_path("${PROJECT_SOURCE_DIR}/externals/")
 
-add_pd_external(dummy_tilde_project dummy~ ${PROJECT_SOURCE_DIR}/src/dummy_tilde.c)
+include(scripts/utilities.cmake)
+
+# Generate a project for every folder in the "source/projects" folder
+SUBDIRLIST(PROJECT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/source/projects)
+foreach (project_dir ${PROJECT_DIRS})
+	if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/source/projects/${project_dir}/CMakeLists.txt")
+		message("Generating: ${project_dir}")
+		add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/source/projects/${project_dir})
+	endif ()
+endforeach ()

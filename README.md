@@ -28,7 +28,7 @@ To generate an Xcode project and use this IDE to build :
 
 ### Windows
 
-The exact command line you need to use will depend on what version of Visual Studio you have installed.
+The exact command line you need to use will depend on the version of Visual Studio you have installed.
 - Run `cmake --help` to get a list of the options available.
 - Assuming some version of Visual Studio 2013, the commands to generate the projects will look like this:
  * 32 bit: `cmake -G "Visual Studio 12" ..`

@@ -1,0 +1,5 @@
+#N canvas 438 194 427 286 10;
+#X obj 110 42 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 110 103 pa.starter 99 jojo;
+#X connect 0 0 1 0;

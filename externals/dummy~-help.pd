@@ -1,8 +1,0 @@
-#N canvas 519 51 626 374 10;
-#X obj 110 63 sig~ 1;
-#X obj 110 103 dummy~, f 16;
-#X obj 203 63 sig~ 2.6;
-#X obj 110 140 number~;
-#X connect 0 0 1 0;
-#X connect 1 0 3 0;
-#X connect 2 0 1 1;

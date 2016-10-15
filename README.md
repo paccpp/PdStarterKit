@@ -1,8 +1,8 @@
 # PdStarterKit
 
-[![Travis](https://img.shields.io/travis/paccpp/PdStarterKit.svg?label=travis)](https://travis-ci.org/paccpp/PdStarterKit) [![Appveyor](https://img.shields.io/appveyor/ci/paccpp/PdStarterKit.svg?label=appveyor)](https://ci.appveyor.com/project/paccpp/PdStarterKit/history)
+[![Travis](https://img.shields.io/travis/paccpp/PdStarterKit.svg?label=travis)](https://travis-ci.org/paccpp/PdStarterKit) [![Appveyor](https://img.shields.io/appveyor/ci/eliottparis/PdStarterKit.svg?label=appveyor)](https://ci.appveyor.com/project/eliottparis/PdStarterKit/history)
 
-This repository contains external objects for [Pure Data](https://puredata.info/) written in C/C++.
+This repository contains a starter kit to write [Pure Data](https://puredata.info/) externals.
 
 ## Prerequisites and dependencies
 

@@ -1,6 +1,6 @@
-# PdObjects
+# PdStarterKit
 
-[![Travis](https://img.shields.io/travis/eliottparis/PdObjects.svg?label=travis)](https://travis-ci.org/eliottparis/PdObjects) [![Appveyor](https://img.shields.io/appveyor/ci/eliottparis/PdObjects.svg?label=appveyor)](https://ci.appveyor.com/project/eliottparis/PdObjects/history)
+[![Travis](https://img.shields.io/travis/paccpp/PdStarterKit.svg?label=travis)](https://travis-ci.org/paccpp/PdStarterKit) [![Appveyor](https://img.shields.io/appveyor/ci/paccpp/PdStarterKit.svg?label=appveyor)](https://ci.appveyor.com/project/paccpp/PdStarterKit/history)
 
 This repository contains external objects for [Pure Data](https://puredata.info/) written in C/C++.
 
@@ -16,9 +16,9 @@ You will also need to install [CMake](https://cmake.org/download/).
 
 ## Building
 
-1. Create an empty directory (ex. "PdObjects").
+1. Create an empty directory (ex. "PdStarterKit").
 2. In the Terminal or Console app of your choice, change directories into the folder you created in step 1 (`cd "path_to_your_folder"`).
-3. `git clone --recursive https://github.com/eliottparis/PdObjects.git .` to clone this repository in the folder you created.
+3. `git clone --recursive https://github.com/paccpp/PdStarterKit.git .` to clone this repository in the folder you created.
 4. `mkdir build` to create a folder with your various build files.
 5. `cd build` to put yourself into that folder.
 6. Now you can generate the projects for your choosen build environment:

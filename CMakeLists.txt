@@ -7,7 +7,7 @@ set(CMAKE_OSX_ARCHITECTURES "i386;x86_64")
 
 include(pd.build/pd.cmake)
 
-project(PdObjects)
+project(PdStarterKit)
 set_pd_sources(${PROJECT_SOURCE_DIR}/pd/src/)
 set_pd_external_path("${PROJECT_SOURCE_DIR}/externals/")
 

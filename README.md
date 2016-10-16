@@ -1,44 +1,83 @@
-# PdStarterKit
+# PdStarterKit | [![Travis](https://img.shields.io/travis/paccpp/PdStarterKit.svg?label=travis)](https://travis-ci.org/paccpp/PdStarterKit) [![Appveyor](https://img.shields.io/appveyor/ci/eliottparis/PdStarterKit.svg?label=appveyor)](https://ci.appveyor.com/project/eliottparis/PdStarterKit/history)
 
-[![Travis](https://img.shields.io/travis/paccpp/PdStarterKit.svg?label=travis)](https://travis-ci.org/paccpp/PdStarterKit) [![Appveyor](https://img.shields.io/appveyor/ci/eliottparis/PdStarterKit.svg?label=appveyor)](https://ci.appveyor.com/project/eliottparis/PdStarterKit/history)
+Ce répertoire fourni une architecture de base pour écrire des objets [Pure Data](https://puredata.info/)
 
-This repository contains a starter kit to write [Pure Data](https://puredata.info/) externals.
+## Installation
 
-## Prerequisites and dependencies
+voir installation de [cmake, Xcode/Visual Studio...](https://github.com/paccpp/paccpp/blob/master/setup/readme.md)
 
-To build the externals in this repository you will need a compiler on your system.
+---
 
-* On the Mac you can use [Xcode](https://developer.apple.com/xcode/) (get it for free from the App Store).
-* On Windows you can use a free version of [Visual Studio](https://www.visualstudio.com/).
-* You can also build directly on the command line using Makefiles.
+Vous aurez aussi besoin de `git` pour pouvoir cloner ce répertoire
 
-You will also need to install [CMake](https://cmake.org/download/).
+- Vérifiez que git est installé en tapant : `git --version`
+- Si vous ne l'avez pas :
+  - Mac : télécharger et installer [git-osx-installer](https://sourceforge.net/projects/git-osx-installer/)
+  - Windows : télécharger et installer [git-for-windows](https://git-for-windows.github.io/)
+  - Linux : taper `yum install git` ou `apt-get install git`.
 
-## Building
+Vous pouvez desormais utiliser `git` en ligne de commande, ou passer par un client git en installant par exemple [SourceTree](https://www.sourcetreeapp.com/) sur Mac et Windows.
 
-1. Create an empty directory (ex. "PdStarterKit").
-2. In the Terminal or Console app of your choice, change directories into the folder you created in step 1 (`cd "path_to_your_folder"`).
-3. `git clone --recursive https://github.com/paccpp/PdStarterKit.git .` to clone this repository in the folder you created.
-4. `mkdir build` to create a folder with your various build files.
-5. `cd build` to put yourself into that folder.
-6. Now you can generate the projects for your choosen build environment:
+---
 
-### Mac
+- Créer un répertoire vide en local (ex. "MyPdObjects").
 
-To generate an Xcode project and use this IDE to build :
-- Run `cmake -G Xcode ..` and then run `cmake --build .` or open the Xcode project from this "build" folder.
+- Dans le terminal ou la console, se rendre dans ce répertoire en tapant:
 
-### Windows
+```shell
+cd "path_to_my_folder"
+```
 
-The exact command line you need to use will depend on the version of Visual Studio you have installed.
-- Run `cmake --help` to get a list of the options available.
-- Assuming some version of Visual Studio 2013, the commands to generate the projects will look like this:
- * 32 bit: `cmake -G "Visual Studio 12" ..`
- * 64 bit: `cmake -G "Visual Studio 12 Win64" -DWIN64:Bool=True ..`
+- Si vous utilisez un client git, cloner ce dépôt grâce à l'interface graphique, sinon clonez ce dépôt dans le répertoire local que vous venez de créer en tapant en ligne de commande :
 
-Having generated the projects, you can now build by opening the .sln file in the build folder with the Visual Studio app.
+```shell
+git clone --recursive https://github.com/paccpp/{name_of_this_repository}.git .
+```
 
-### Using Makefiles
+4. Créer ensuite un dossier _build_ en tapant : `mkdir build` et s'y rendre `cd build`.
 
-To build on the command line using Makefiles:
-- run `cmake ..` and then run `cmake --build .` or `make .`
+6. Vous pouvez maintenant générer des projets pour votre environnement :
+
+#### Mac
+
+Pour générer un projet Xcode taper :
+- `cmake -G Xcode ..`
+- Ouvrez le projet Xcode généré dans le dossier _build_ pour compiler à partir de l'IDE, ou compiler directement le projet en tapant `cmake --build .`
+
+Répéter ces commandes à chaque modification du projet (ajout, suppression de fichier, dossier).
+
+#### Windows
+
+La commande exacte à taper va dépendre de la version de Visual Studio que vous avez installée.
+- Taper `cmake --help` pour obtenir la liste des options disponibles.
+- Si vous avez par exemple Visual Studio 2013, la commande à taper ressemblera à :
+  * 32 bit: `cmake -G "Visual Studio 12" ..`
+  * 64 bit: `cmake -G "Visual Studio 12 Win64" -DWIN64:Bool=True ..`
+
+Quand le projet est généré, vous pouvez ouvrir le fichier .sln avec Visual Studio.
+
+Répéter ces commandes à chaque modification du projet (ajout, suppression de fichier, dossier).
+
+#### Makefiles
+
+Pour compiler directement en ligne de commandes :
+- tapper `cmake ..` puis `cmake --build .` ou `make .`
+
+## Pour ajouter un external:
+
+- Dupliquer un dossier existant dans le répertoire _source/projects/_
+- renommer le dossier copié ex : _my.objectname_tilde_
+- Modifier ensuite le nom de l'external dans le fichier 'CMakeLists.txt' en remplaçant le nom de l'ancien objet par le nouveau (ex: _my.objectname~_) à la ligne suivante :
+
+```cmake
+set(PRODUCT_NAME my.objectname~)
+```
+
+- Générer à nouveau le projet en utilisant la commande cmake dans le dossier _build_ puis ouvrez le pour modifier le code source et compiler.
+
+  Les externals compilés se trouvent dans le répertoire _externals_.
+
+## Crédits
+
+- [pure-data](https://github.com/pure-data/pure-data) => @millerpuckette and others
+- [pd.build](https://github.com/pierreguillot/pd.build) => @pierreguillot

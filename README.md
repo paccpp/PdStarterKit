@@ -1,4 +1,4 @@
-# PdStarterKit | [![Travis](https://img.shields.io/travis/paccpp/PdStarterKit.svg?label=travis)](https://travis-ci.org/paccpp/PdStarterKit) [![Appveyor](https://img.shields.io/appveyor/ci/eliottparis/PdStarterKit.svg?label=appveyor)](https://ci.appveyor.com/project/eliottparis/PdStarterKit/history)
+# PdStarterKit
 
 Ce répertoire fourni une architecture de base pour écrire des objets [Pure Data](https://puredata.info/)
 

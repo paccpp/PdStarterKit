@@ -1,12 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
 
-# Fetch submodules
-message(STATUS "Updating Git Submodules")
-execute_process(
-	COMMAND git submodule update --init --recursive
-	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-)
-
 set(CMAKE_SUPPRESS_REGENERATION true)
 set(CMAKE_MACOSX_RPATH Off)
 set(CMAKE_OSX_DEPLOYMENT_TARGET 10.4)
@@ -14,7 +7,11 @@ set(CMAKE_OSX_ARCHITECTURES "i386;x86_64")
 
 include(pd.build/pd.cmake)
 
-project(PdStarterKit)
+# Project name is the name of the directory that contains this CMakeList file
+get_filename_component(ProjectName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" ProjectName ${ProjectName})
+project(${ProjectName})
+
 set_pd_sources(${PROJECT_SOURCE_DIR}/pd/src/)
 set_pd_external_path("${PROJECT_SOURCE_DIR}/externals/")
 

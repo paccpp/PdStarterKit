@@ -81,3 +81,7 @@ set(PRODUCT_NAME my.objectname~)
 
 - [pure-data](https://github.com/pure-data/pure-data) => @millerpuckette and others
 - [pd.build](https://github.com/pierreguillot/pd.build) => @pierreguillot
+
+## Liens
+
+- ["HOWTO write an External for PureData"](http://pdstatic.iem.at/externals-HOWTO/)

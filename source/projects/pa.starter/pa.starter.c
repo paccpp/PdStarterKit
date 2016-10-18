@@ -4,15 +4,16 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 */
 
-// A starter for pd objects
+// A starter for Pd objects
 
-#include <m_pd.h>
+#include <m_pd.h> // puredata header
 
 static t_class *pa_starter_class;
 
-typedef struct _pa_starter
+typedef struct t_pa_starter
 {
-    t_object    m_obj;
+    t_object    m_obj; // pd object - always placed in first in the object's struct
+    
 } t_pa_starter;
 
 static void pa_starter_bang(t_pa_starter *x)
@@ -23,6 +24,7 @@ static void pa_starter_bang(t_pa_starter *x)
 static void *pa_starter_new(t_symbol *name, int argc, t_atom *argv)
 {
     t_pa_starter *x = (t_pa_starter *)pd_new(pa_starter_class);
+    
     if(x)
     {
         ;

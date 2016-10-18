@@ -4,7 +4,7 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 */
 
-// A starter for pd signal objects
+// A starter for Pd signal objects
 
 #include <m_pd.h>
 
@@ -12,7 +12,7 @@ static t_class *pa_starter_tilde_class;
 
 typedef struct _pa_starter_tilde
 {
-    t_object    m_obj;
+    t_object    m_obj; // pd object - always placed in first in the object's struct
     t_float     m_f;
 } t_pa_starter_tilde;
 
@@ -63,11 +63,12 @@ extern void setup_pa0x2estarter_tilde(void)
 {
     t_class* c = class_new(gensym("pa.starter~"),
                            (t_newmethod)pa_starter_tilde_new, (t_method)pa_starter_tilde_free,
-                           sizeof(t_pa_starter_tilde), CLASS_DEFAULT, 0);
+                           sizeof(t_pa_starter_tilde), CLASS_DEFAULT, A_GIMME, 0);
     if(c)
     {
-        class_addmethod(c, (t_method)pa_starter_tilde_dsp, gensym("dsp"), A_CANT);
         CLASS_MAINSIGNALIN(c, t_pa_starter_tilde, m_f);
+        class_addmethod(c, (t_method)pa_starter_tilde_dsp, gensym("dsp"), A_CANT);
     }
+    
     pa_starter_tilde_class = c;
 }
